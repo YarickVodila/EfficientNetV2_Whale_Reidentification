@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1270, 1333)
+        MainWindow.resize(1064, 734)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Fixed, QtWidgets.QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -47,9 +47,9 @@ class Ui_MainWindow(object):
         font.setItalic(True)
         font.setWeight(50)
         self.ArchiveBox.setFont(font)
-        self.ArchiveBox.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"font: italic 13pt \"Arial\";\n"
-"alternate-background-color: rgb(255, 255, 255);")
+        self.ArchiveBox.setStyleSheet("border:1px solid black;\n"
+"border-radius: 5px;")
+        self.ArchiveBox.setTitle("")
         self.ArchiveBox.setFlat(False)
         self.ArchiveBox.setCheckable(False)
         self.ArchiveBox.setChecked(False)
@@ -60,7 +60,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 142, 1334))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 139, 1284))
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
@@ -201,6 +201,8 @@ class Ui_MainWindow(object):
         self.gridLayout.addWidget(self.ArchiveBox, 0, 0, 1, 1)
         self.horizontalLayout.addWidget(self.LeftF)
         self.CentralF = QtWidgets.QFrame(self.centralwidget)
+        self.CentralF.setStyleSheet("border: solid 1px black;\n"
+"border-radius: 5px;")
         self.CentralF.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.CentralF.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.CentralF.setObjectName("CentralF")
@@ -270,7 +272,10 @@ class Ui_MainWindow(object):
         font.setItalic(False)
         font.setWeight(9)
         self.groupBox.setFont(font)
-        self.groupBox.setStyleSheet("font: 75 13pt \"Arial\";")
+        self.groupBox.setStyleSheet("font: 75 13pt \"Arial\";\n"
+"border:1px solid black;\n"
+"border-radius: 10px;")
+        self.groupBox.setTitle("")
         self.groupBox.setObjectName("groupBox")
         self.gridLayout_3.addWidget(self.groupBox, 1, 0, 2, 1)
         self.horizontalLayout.addWidget(self.Right)
@@ -285,7 +290,6 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.ArchiveBox.setTitle(_translate("MainWindow", "Архив изображений"))
         self.Whale_15.setText(_translate("MainWindow", "Виджет с Китом"))
         self.Whale_14.setText(_translate("MainWindow", "Виджет с Китом"))
         self.Whale_13.setText(_translate("MainWindow", "Виджет с Китом"))
@@ -301,5 +305,13 @@ class Ui_MainWindow(object):
         self.label_3.setText(_translate("MainWindow", "Тут картинка с китами"))
         self.label_2.setText(_translate("MainWindow", "Тут набор тегов"))
         self.BackButton.setText(_translate("MainWindow", "Назад"))
-        self.groupBox.setTitle(_translate("MainWindow", "Метаданные"))
 
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec())

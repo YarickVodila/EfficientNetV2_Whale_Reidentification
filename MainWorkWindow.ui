@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1270</width>
-    <height>1333</height>
+    <width>1064</width>
+    <height>734</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -75,12 +75,11 @@
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(255, 255, 255);
-font: italic 13pt &quot;Arial&quot;;
-alternate-background-color: rgb(255, 255, 255);</string>
+          <string notr="true">border:1px solid black;
+border-radius: 5px;</string>
          </property>
          <property name="title">
-          <string>Архив изображений</string>
+          <string/>
          </property>
          <property name="flat">
           <bool>false</bool>
@@ -102,8 +101,8 @@ alternate-background-color: rgb(255, 255, 255);</string>
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>142</width>
-               <height>1334</height>
+               <width>139</width>
+               <height>1284</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -455,6 +454,10 @@ alternate-background-color: rgb(255, 255, 255);</string>
     </item>
     <item>
      <widget class="QFrame" name="CentralF">
+      <property name="styleSheet">
+       <string notr="true">border: solid 1px black;
+border-radius: 5px;</string>
+      </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
       </property>
@@ -621,10 +624,12 @@ alternate-background-color: rgb(255, 255, 255);</string>
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">font: 75 13pt &quot;Arial&quot;;</string>
+          <string notr="true">font: 75 13pt &quot;Arial&quot;;
+border:1px solid black;
+border-radius: 10px;</string>
          </property>
          <property name="title">
-          <string>Метаданные</string>
+          <string/>
          </property>
         </widget>
        </item>
