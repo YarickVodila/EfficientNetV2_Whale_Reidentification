@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1270, 975)
+        MainWindow.resize(1270, 778)
         MainWindow.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setStyleSheet("background-color: rgb(255, 255, 255);")
@@ -35,6 +35,9 @@ class Ui_MainWindow(object):
         self.ArchiveBox.setSizePolicy(sizePolicy)
         self.ArchiveBox.setMinimumSize(QtCore.QSize(0, 0))
         self.ArchiveBox.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        self.ArchiveBox.setFont(font)
         self.ArchiveBox.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "alternate-background-color: rgb(255, 255, 255);")
         self.ArchiveBox.setFlat(False)
@@ -122,6 +125,9 @@ class Ui_MainWindow(object):
         self.groupBox = QtWidgets.QGroupBox(self.Right)
         self.groupBox.setMinimumSize(QtCore.QSize(200, 0))
         self.groupBox.setMaximumSize(QtCore.QSize(200, 16777215))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        self.groupBox.setFont(font)
         self.groupBox.setObjectName("groupBox")
         self.gridLayout_3.addWidget(self.groupBox, 0, 0, 3, 1)
         self.horizontalLayout.addWidget(self.Right)
