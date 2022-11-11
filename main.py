@@ -10,6 +10,13 @@ class MainPageWindow(QMainWindow):
         super().__init__()
         self.mainPageWindow = Ui_MainWindow()
         self.mainPageWindow.setupUi(self)
+        self.mainPageWindow.BackButton.clicked.connect(self.back)
+
+    def back(self):
+        self.firstPageWindow = FirstPage()
+        self.firstPageWindow.show()
+        self.hide()
+
 
 
 class FirstPage(QMainWindow):
