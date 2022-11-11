@@ -10,7 +10,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 
 
 class Ui_IIntegrationWhale(object):
-    def setupUi(self, IIntegrationWhale):
+    def setupFirstPageUi(self, IIntegrationWhale):
         IIntegrationWhale.setObjectName("IIntegrationWhale")
         IIntegrationWhale.setEnabled(True)
         IIntegrationWhale.resize(800, 542)
@@ -65,10 +65,10 @@ class Ui_IIntegrationWhale(object):
         self.gridLayout.addWidget(self.progressBar, 1, 0, 1, 1, QtCore.Qt.AlignmentFlag.AlignHCenter)
         IIntegrationWhale.setCentralWidget(self.centralwidget)
 
-        self.retranslateUi(IIntegrationWhale)
+        self.retranslateFirstUi(IIntegrationWhale)
         QtCore.QMetaObject.connectSlotsByName(IIntegrationWhale)
 
-    def retranslateUi(self, IIntegrationWhale):
+    def retranslateFirstUi(self, IIntegrationWhale):
         _translate = QtCore.QCoreApplication.translate
         IIntegrationWhale.setWindowTitle(_translate("IIntegrationWhale", "MainWindow"))
         self.pushButton.setText(_translate("IIntegrationWhale", "Выберите файл"))

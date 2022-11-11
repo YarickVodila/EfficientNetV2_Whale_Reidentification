@@ -302,3 +302,4 @@ class Ui_MainWindow(object):
         self.label_2.setText(_translate("MainWindow", "Тут набор тегов"))
         self.BackButton.setText(_translate("MainWindow", "Назад"))
         self.groupBox.setTitle(_translate("MainWindow", "Метаданные"))
+
