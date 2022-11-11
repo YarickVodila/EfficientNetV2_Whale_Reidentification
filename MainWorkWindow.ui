@@ -62,10 +62,15 @@
          <property name="font">
           <font>
            <family>Arial</family>
+           <pointsize>13</pointsize>
+           <weight>50</weight>
+           <italic>true</italic>
+           <bold>false</bold>
           </font>
          </property>
          <property name="styleSheet">
           <string notr="true">background-color: rgb(255, 255, 255);
+font: italic 13pt &quot;Arial&quot;;
 alternate-background-color: rgb(255, 255, 255);</string>
          </property>
          <property name="title">
@@ -221,6 +226,9 @@ alternate-background-color: rgb(255, 255, 255);</string>
         <height>16777215</height>
        </size>
       </property>
+      <property name="styleSheet">
+       <string notr="true">font: 75 13pt &quot;Arial&quot;;</string>
+      </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
       </property>
@@ -277,7 +285,15 @@ alternate-background-color: rgb(255, 255, 255);</string>
          <property name="font">
           <font>
            <family>Arial</family>
+           <pointsize>13</pointsize>
+           <weight>9</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+           <kerning>true</kerning>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font: 75 13pt &quot;Arial&quot;;</string>
          </property>
          <property name="title">
           <string>Метаданные</string>
