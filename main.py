@@ -1,17 +1,19 @@
-from PyQt5 import QtWidgets
-from PyQt5.QtWidgets import QApplication, QMainWindow
-
+from PyQt6 import QtWidgets
+from PyQt6.QtWidgets import QApplication, QMainWindow
+from mainPage import Ui_MainWindow
 import sys
 
 
-def applictation():
-    app = QApplication(sys.argv)
-    window = QMainWindow()
-    window.setWindowTitle("Кито`омайзер")
-    window.setGeometry(800, 600, 800, 600)
-    window.show()
-    sys.exit(app.exec_())
+class Whale(QMainWindow):
+    def __init__(self):
+        super(Whale,self).__init__()
+        self.ui = Ui_MainWindow()
+        self.ui.setupUi(self)
 
 
 if __name__ == "__main__":
-    applictation()
+    app = QApplication(sys.argv)
+
+    window = Whale()
+    window.show()
+    sys.exit(app.exec())
