@@ -39,7 +39,6 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     with open('./QSS-master/Aqua.qss', 'r') as f:
         style = f.read()
-        # Set the stylesheet of the application
         app.setStyleSheet(style)
     window = FirstPage()
     window.show()
