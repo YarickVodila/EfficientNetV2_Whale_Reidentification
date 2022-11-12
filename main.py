@@ -1,7 +1,7 @@
 import sys
 from functools import partial
 
-from PyQt6.QtWidgets import QApplication, QMainWindow, QLabel
+from PyQt6.QtWidgets import QApplication, QMainWindow, QLabel, QFileDialog
 
 from firstPage import Ui_IIntegrationWhale
 from mainPage import Ui_MainWindow
@@ -9,13 +9,13 @@ from whaleWitget import WhaleCont
 
 
 class MainPageWindow(QMainWindow):
-    def __init__(self):
+    def __init__(self, images):
         super().__init__()
         self.mainPageWindow = Ui_MainWindow()
         self.mainPageWindow.setupUi(self)
         self.mainPageWindow.BackButton.clicked.connect(self.back)
-        self.createWhaleWitged("image.jpg")
-        self.createWhaleWitged("7ba843ae6b3493b63c4131499d34533f.jpg")
+        for i in images:
+            self.createWhaleWitged(i)
         self.addTags()
 
     def back(self):
@@ -34,21 +34,19 @@ class MainPageWindow(QMainWindow):
         whale.selected()
         self.mainPageWindow.label_3.setPixmap(whale.pixmap)
 
-
     def addTags(self, tags=None):
         if tags is None:
-            tags = {'1': '1 Место по вироятности кита', '2': "2 Место по вироятности кита",'3': "3 Место по вироятности кита",'4': "4 Место по вироятности кита",'5': "5 Место по вироятности кита"}
+            tags = {'1': '1 Место по вироятности кита', '2': "2 Место по вироятности кита",
+                    '3': "3 Место по вироятности кита", '4': "4 Место по вироятности кита",
+                    '5': "5 Место по вироятности кита"}
         for i in tags:
-            print(i)
             self.label = QLabel(self.mainPageWindow.frame_2)
             self.label.setText(tags[i])
             self.mainPageWindow.gridLayout_5.addWidget(self.label)
 
-
     def clearTags(self):
         for i in reversed(range(self.mainPageWindow.gridLayout_5.count())):
             self.mainPageWindow.gridLayout_5.itemAt(i).widget().deleteLater()
-
 
 
 class FirstPage(QMainWindow):
@@ -59,7 +57,13 @@ class FirstPage(QMainWindow):
         self.firstPageWindow.pushButton.clicked.connect(self.close)
 
     def close(self):
-        self.mainPageWindow = MainPageWindow()
+        dlg = QFileDialog()
+        # print(dlg.getOpenFileNames())
+        fnames = QFileDialog.getOpenFileNames(self, 'Выбрать китов',
+                                              None, "Киты (*.jpg *.png)")
+        if len(fnames[0]) == 0:
+            return
+        self.mainPageWindow = MainPageWindow(fnames[0])
         self.mainPageWindow.show()
         self.hide()
 
