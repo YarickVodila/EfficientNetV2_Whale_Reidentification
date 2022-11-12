@@ -17,6 +17,7 @@ class MainPageWindow(QMainWindow):
         self.createWhaleWitged("image.jpg")
         self.createWhaleWitged("7ba843ae6b3493b63c4131499d34533f.jpg")
         self.addTags()
+        self.clearTags()
 
     def back(self):
         self.firstPageWindow = FirstPage()
@@ -43,6 +44,11 @@ class MainPageWindow(QMainWindow):
             self.label = QLabel(self.mainPageWindow.frame_2)
             self.label.setText(tags[i])
             self.mainPageWindow.gridLayout_5.addWidget(self.label)
+
+
+    def clearTags(self):
+        for i in reversed(range(self.mainPageWindow.gridLayout_5.count())):
+            self.mainPageWindow.gridLayout_5.itemAt(i).widget().deleteLater()
 
 
 
