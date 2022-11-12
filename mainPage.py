@@ -34,7 +34,8 @@ class Ui_MainWindow(object):
         self.gridLayout = QtWidgets.QGridLayout(self.LeftF)
         self.gridLayout.setObjectName("gridLayout")
         self.ArchiveBox = QtWidgets.QGroupBox(self.LeftF)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred,
+                                           QtWidgets.QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.ArchiveBox.sizePolicy().hasHeightForWidth())
@@ -49,7 +50,7 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.ArchiveBox.setFont(font)
         self.ArchiveBox.setStyleSheet("border:1px solid black;\n"
-"border-radius: 5px;")
+                                      "border-radius: 5px;")
         self.ArchiveBox.setTitle("")
         self.ArchiveBox.setFlat(False)
         self.ArchiveBox.setCheckable(False)
@@ -72,7 +73,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout.addWidget(self.LeftF)
         self.CentralF = QtWidgets.QFrame(self.centralwidget)
         self.CentralF.setStyleSheet("border: solid 2px black;\n"
-"border-radius: 5px;")
+                                    "border-radius: 5px;")
         self.CentralF.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.CentralF.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.CentralF.setObjectName("CentralF")
@@ -80,7 +81,7 @@ class Ui_MainWindow(object):
         self.verticalLayout.setObjectName("verticalLayout")
         self.frame = QtWidgets.QFrame(self.CentralF)
         self.frame.setStyleSheet("border-color: rgb(0, 0, 0);\n"
-"border: 1px solid")
+                                 "border: 1px solid")
         self.frame.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame.setObjectName("frame")
@@ -103,7 +104,7 @@ class Ui_MainWindow(object):
         self.frame_2.setMinimumSize(QtCore.QSize(150, 100))
         self.frame_2.setMaximumSize(QtCore.QSize(16777215, 100))
         self.frame_2.setStyleSheet("border:1px solid black;\n"
-"border-radius:5px")
+                                   "border-radius:5px")
         self.frame_2.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame_2.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame_2.setObjectName("frame_2")
@@ -130,8 +131,8 @@ class Ui_MainWindow(object):
         font.setWeight(9)
         self.groupBox.setFont(font)
         self.groupBox.setStyleSheet("font: 75 13pt \"Arial\";\n"
-"border:1px solid black;\n"
-"border-radius: 10px;")
+                                    "border:1px solid black;\n"
+                                    "border-radius: 10px;")
         self.groupBox.setTitle("")
         self.groupBox.setObjectName("groupBox")
         self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.groupBox)
@@ -154,7 +155,8 @@ class Ui_MainWindow(object):
         self.pushButton.setMinimumSize(QtCore.QSize(180, 20))
         self.pushButton.setObjectName("pushButton")
         self.verticalLayout_3.addWidget(self.pushButton)
-        spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum,
+                                           QtWidgets.QSizePolicy.Policy.Expanding)
         self.verticalLayout_3.addItem(spacerItem)
         self.label = QtWidgets.QLabel(self.groupBox)
         self.label.setMaximumSize(QtCore.QSize(200, 200))
@@ -184,6 +186,7 @@ class Ui_MainWindow(object):
 
 if __name__ == "__main__":
     import sys
+
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
