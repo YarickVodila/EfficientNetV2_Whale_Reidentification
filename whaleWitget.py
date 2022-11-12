@@ -5,6 +5,7 @@ from PyQt6.QtGui import QPixmap
 class WhaleCont(QtWidgets.QWidget):
     classes = ['/']
     jpg = '7ba843ae6b3493b63c4131499d34533f.jpg'
+
     def __init__(self, *args, **kwargs):
         super(WhaleCont, self).__init__(*args, **kwargs)
         layout = QtWidgets.QVBoxLayout()
@@ -25,3 +26,4 @@ class WhaleCont(QtWidgets.QWidget):
 
     def selected(self, *args, **kwargs):
         self.label.setText('Нажато')
+

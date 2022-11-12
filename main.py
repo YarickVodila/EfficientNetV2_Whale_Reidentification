@@ -16,8 +16,6 @@ class MainPageWindow(QMainWindow):
 
 
 
-
-
     def back(self):
         self.firstPageWindow = FirstPage()
         self.firstPageWindow.show()
@@ -28,6 +26,12 @@ class MainPageWindow(QMainWindow):
         self.whaleWidget = WhaleCont()
         self.whaleWidget.setStyleSheet("background-color: rgb(77, 77, 77);")
         self.mainPageWindow.verticalLayout_2.addWidget(self.whaleWidget)
+        self.whaleWidget.label.mousePressEvent = self.changeWhaleMainImage
+
+
+    def changeWhaleMainImage(self, *args, **kwargs):
+        self.mainPageWindow.label_3.setStyleSheet('border:2px solid black')
+        self.whaleWidget.selected()
 
 
 
