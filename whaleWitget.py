@@ -5,6 +5,7 @@ from PyQt6.QtGui import QPixmap
 class WhaleCont(QtWidgets.QWidget):
     def __init__(self, img, classes, *args, **kwargs):
         super(WhaleCont, self).__init__(*args, **kwargs)
+        self.selected = False
         self.classes = classes
         layout = QtWidgets.QVBoxLayout()
         self.label = QtWidgets.QLabel()
@@ -33,4 +34,3 @@ class WhaleCont(QtWidgets.QWidget):
 
     def select(self):
         self.label.setStyleSheet('border:3px solid cyan;')
-

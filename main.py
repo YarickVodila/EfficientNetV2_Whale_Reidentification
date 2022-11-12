@@ -11,7 +11,6 @@ from whaleWitget import WhaleCont
 
 
 class MainPageWindow(QMainWindow):
-    selected = None
     def __init__(self, images):
         super().__init__()
         self.mainPageWindow = Ui_MainWindow()
@@ -26,14 +25,15 @@ class MainPageWindow(QMainWindow):
         self.firstPageWindow.show()
         self.hide()
 
-    def createWhaleWitged(self, img, top):
+    def createWhaleWidged(self, img, top):
         whaleWidget = WhaleCont(img, top)
         whaleWidget.setStyleSheet("background-color: rgb(77, 77, 77); border-radius:0px; border:1px solid black")
         whaleWidget.label.mousePressEvent = partial(self.changeWhaleMain, whaleWidget)
         self.mainPageWindow.verticalLayout_2.addWidget(whaleWidget)
 
     def deselect(self):
-        items = (self.mainPageWindow.verticalLayout_2.itemAt(i) for i in range(self.mainPageWindow.verticalLayout_2.count()))
+        items = (self.mainPageWindow.verticalLayout_2.itemAt(i) for i in
+                 range(self.mainPageWindow.verticalLayout_2.count()))
         for w in items:
             w.widget().deselect()
 
