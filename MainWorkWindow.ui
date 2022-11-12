@@ -29,6 +29,12 @@
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
      <widget class="QFrame" name="LeftF">
+      <property name="minimumSize">
+       <size>
+        <width>200</width>
+        <height>200</height>
+       </size>
+      </property>
       <property name="maximumSize">
        <size>
         <width>200</width>
@@ -105,39 +111,7 @@ border-radius: 5px;</string>
                <height>653</height>
               </rect>
              </property>
-             <layout class="QVBoxLayout" name="verticalLayout_2">
-              <item>
-               <widget class="QLabel" name="Whale_14">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="minimumSize">
-                 <size>
-                  <width>100</width>
-                  <height>100</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>100</width>
-                  <height>100</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: rgb(77, 77, 77);</string>
-                </property>
-                <property name="text">
-                 <string>Виджет с Китом</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-                </property>
-               </widget>
-              </item>
-             </layout>
+             <layout class="QVBoxLayout" name="verticalLayout_2"/>
             </widget>
            </widget>
           </item>
@@ -150,7 +124,7 @@ border-radius: 5px;</string>
     <item>
      <widget class="QFrame" name="CentralF">
       <property name="styleSheet">
-       <string notr="true">border: solid 1px black;
+       <string notr="true">border: solid 2px black;
 border-radius: 5px;</string>
       </property>
       <property name="frameShape">
@@ -163,7 +137,8 @@ border-radius: 5px;</string>
        <item>
         <widget class="QFrame" name="frame">
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(200, 200, 200);</string>
+          <string notr="true">border-color: rgb(0, 0, 0);
+border: 1px solid</string>
          </property>
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
@@ -188,8 +163,11 @@ border-radius: 5px;</string>
               <kerning>true</kerning>
              </font>
             </property>
+            <property name="styleSheet">
+             <string notr="true">border:None;</string>
+            </property>
             <property name="text">
-             <string>Тут картинка с китами</string>
+             <string>Пожалуйста, выберете картинку в списке слева</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -219,27 +197,7 @@ border-radius: 5px;</string>
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
          </property>
-         <layout class="QGridLayout" name="gridLayout_5">
-          <item row="0" column="0">
-           <widget class="QLabel" name="label_2">
-            <property name="minimumSize">
-             <size>
-              <width>500</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">background-color: rgb(200, 200, 200);</string>
-            </property>
-            <property name="text">
-             <string>Тут набор тегов</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-           </widget>
-          </item>
-         </layout>
+         <layout class="QGridLayout" name="gridLayout_5"/>
         </widget>
        </item>
       </layout>
@@ -263,25 +221,6 @@ border-radius: 5px;</string>
        <enum>QFrame::Raised</enum>
       </property>
       <layout class="QGridLayout" name="gridLayout_3">
-       <item row="0" column="0">
-        <widget class="QPushButton" name="BackButton">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>200</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Загрузить снова</string>
-         </property>
-        </widget>
-       </item>
        <item row="1" column="0">
         <widget class="QGroupBox" name="groupBox">
          <property name="minimumSize">
@@ -313,9 +252,40 @@ border-radius: 10px;</string>
          <property name="title">
           <string/>
          </property>
-         <layout class="QVBoxLayout" name="verticalLayout_3">
-          <item>
+         <layout class="QFormLayout" name="formLayout">
+          <item row="0" column="0">
+           <widget class="QPushButton" name="BackButton">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>180</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Загрузить снова</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
            <widget class="QPushButton" name="pushButton">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>180</width>
+              <height>20</height>
+             </size>
+            </property>
             <property name="text">
              <string>Исправить положение</string>
             </property>
