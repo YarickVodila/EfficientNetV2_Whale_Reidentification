@@ -3,9 +3,9 @@ from PyQt6.QtGui import QPixmap
 
 
 class WhaleCont(QtWidgets.QWidget):
-    classes = {"1": 'Биба', "2": "Боба"}
-    def __init__(self, img, *args, **kwargs):
+    def __init__(self, img, classes, *args, **kwargs):
         super(WhaleCont, self).__init__(*args, **kwargs)
+        self.classes = classes
         layout = QtWidgets.QVBoxLayout()
         self.label = QtWidgets.QLabel()
         self.pixmap = QPixmap(img)

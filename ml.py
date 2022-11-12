@@ -9,13 +9,13 @@ def SSIMLoss(y_true, y_pred):
 
 
 optimizer = tf.keras.optimizers.Adam(lr=0.0005)
-autoencoder = keras.models.load_model('autoencoder.h5', compile=False)
+autoencoder = keras.models.load_model('autoencoder_full_2.h5', compile=False)
 autoencoder.compile(optimizer=optimizer, loss=SSIMLoss)
-model = keras.models.load_model('EffNetb0v2_ep30.h5')
+model = keras.models.load_model('EffNetb0v2_ep1.h5')
 
 
 def _is_unknown_whale(pred, image_test):
-    if float(SSIMLoss(pred[0], image_test)) > 0.1:
+    if float(SSIMLoss(pred[0], image_test)) > 0.035:
         return True, float(SSIMLoss(pred[0], image_test))
     else:
         return False, float(SSIMLoss(pred[0], image_test))
@@ -23,7 +23,8 @@ def _is_unknown_whale(pred, image_test):
 
 def is_unknown_whale(image):
     pred = autoencoder.predict(np.array(image))
-    return _is_unknown_whale(pred, image)
+    result = _is_unknown_whale(pred, image)
+    return result
 
 
 def get_top(image, top=5):
@@ -31,9 +32,9 @@ def get_top(image, top=5):
     image = [cv2.resize(image, (224, 224))]
     image = np.array(image).astype('float32') / 255.0
     pred = model.predict(image)
-    pred_sorted = [(list(pred[0]).index(x)) for x in sorted(list(pred[0]))[-top:]]
+    pred_sorted = [(list(pred[0]).index(x) + 1) for x in sorted(list(pred[0]))[-top:]]
     top = list(reversed(pred_sorted))
     anti = is_unknown_whale(image)[0]
     if anti:
-        top[0] = -1
+        top[0] = 0
     return top
