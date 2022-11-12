@@ -1,7 +1,8 @@
 import sys
 from functools import partial
 
-from PyQt6.QtWidgets import QApplication, QMainWindow, QLabel, QFileDialog
+from PyQt6 import uic
+from PyQt6.QtWidgets import QApplication, QMainWindow, QLabel, QFileDialog, QWidget
 
 import ml
 from firstPage import Ui_IIntegrationWhale
@@ -10,11 +11,13 @@ from whaleWitget import WhaleCont
 
 
 class MainPageWindow(QMainWindow):
+    selected = None
     def __init__(self, images):
         super().__init__()
         self.mainPageWindow = Ui_MainWindow()
         self.mainPageWindow.setupUi(self)
         self.mainPageWindow.BackButton.clicked.connect(self.back)
+        self.mainPageWindow.pushButton.clicked.connect(self.correctButtonInit)
         for img, top in images:
             self.createWhaleWidged(img, top)
 
@@ -23,33 +26,42 @@ class MainPageWindow(QMainWindow):
         self.firstPageWindow.show()
         self.hide()
 
-    def createWhaleWidged(self, img, top):
+    def createWhaleWitged(self, img, top):
         whaleWidget = WhaleCont(img, top)
         whaleWidget.setStyleSheet("background-color: rgb(77, 77, 77); border-radius:0px; border:1px solid black")
         whaleWidget.label.mousePressEvent = partial(self.changeWhaleMain, whaleWidget)
         self.mainPageWindow.verticalLayout_2.addWidget(whaleWidget)
 
+    def deselect(self):
+        items = (self.mainPageWindow.verticalLayout_2.itemAt(i) for i in range(self.mainPageWindow.verticalLayout_2.count()))
+        for w in items:
+            w.widget().deselect()
+
     def changeWhaleMain(self, whale, *args, **kwargs):
+        self.clearTags()
         self.mainPageWindow.label_3.setScaledContents(True)
-        whale.selected()
-        self.clearIDs()
-        self.addIDs(whale.classes)
+        self.deselect()
+        whale.select()
+        self.addTags(whale.classes)
         self.mainPageWindow.label_3.setPixmap(whale.pixmap)
 
-    def addIDs(self, ids=None):
-        if ids is None:
-            ids = {'1': '1 Место по вироятности кита', '2': "2 Место по вироятности кита",
+    def addTags(self, tags=None):
+        if tags is None:
+            tags = {'1': '1 Место по вироятности кита', '2': "2 Место по вироятности кита",
                     '3': "3 Место по вироятности кита", '4': "4 Место по вироятности кита",
                     '5': "5 Место по вироятности кита"}
-        for i in ids:
+        for i in tags:
             self.label = QLabel(self.mainPageWindow.frame_2)
             self.label.setText(str(i))
             self.label.setStyleSheet('border:None;')
             self.mainPageWindow.gridLayout_5.addWidget(self.label)
 
-    def clearIDs(self):
+    def clearTags(self):
         for i in reversed(range(self.mainPageWindow.gridLayout_5.count())):
             self.mainPageWindow.gridLayout_5.itemAt(i).widget().deleteLater()
+
+    def correctButtonInit(self):
+        self.correctWindow = CorrectForm()
 
 
 class FirstPage(QMainWindow):
@@ -72,6 +84,13 @@ class FirstPage(QMainWindow):
         self.mainPageWindow = MainPageWindow(images)
         self.mainPageWindow.show()
         self.hide()
+
+
+class CorrectForm(QWidget):
+    def __init__(self):
+        super(CorrectForm, self).__init__()  # Call the inherited classes __init__ method
+        ui = uic.loadUi('correctForm.ui', self)
+        self.show()
 
 
 if __name__ == "__main__":

@@ -22,6 +22,15 @@ class WhaleCont(QtWidgets.QWidget):
         layout.addWidget(self.label)
         self.setLayout(layout)
 
-    def selected(self, *args, **kwargs):
-        # self.label.setText('Нажато')
-        pass
+    def selectedInit(self, *args, **kwargs):
+        if self.selected:
+            self.selected = False
+        else:
+            self.selected = True
+
+    def deselect(self):
+        self.label.setStyleSheet('border:1px solid black;')
+
+    def select(self):
+        self.label.setStyleSheet('border:3px solid cyan;')
+

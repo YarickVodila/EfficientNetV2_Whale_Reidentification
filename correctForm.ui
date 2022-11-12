@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>114</height>
+    <height>302</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -43,6 +43,13 @@
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout">
             <item>
+             <widget class="QLabel" name="label">
+              <property name="text">
+               <string>Тег 1</string>
+              </property>
+             </widget>
+            </item>
+            <item>
              <widget class="QPushButton" name="pushButton">
               <property name="text">
                <string>Исправить</string>
@@ -58,6 +65,150 @@
             </item>
             <item>
              <widget class="QLineEdit" name="lineEdit"/>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QWidget" name="correctWidtget_3" native="true">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_7">
+            <item>
+             <widget class="QLabel" name="label_7">
+              <property name="text">
+               <string>Тег 2</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton_7">
+              <property name="text">
+               <string>Исправить</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="textToChangeLabel_7">
+              <property name="text">
+               <string>Текст</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="lineEdit_7"/>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QWidget" name="correctWidtget_5" native="true">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_9">
+            <item>
+             <widget class="QLabel" name="label_9">
+              <property name="text">
+               <string>Тег 3</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton_9">
+              <property name="text">
+               <string>Исправить</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="textToChangeLabel_9">
+              <property name="text">
+               <string>Текст</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="lineEdit_9"/>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QWidget" name="correctWidtget_4" native="true">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_8">
+            <item>
+             <widget class="QLabel" name="label_8">
+              <property name="text">
+               <string>Тег 4</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton_8">
+              <property name="text">
+               <string>Исправить</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="textToChangeLabel_8">
+              <property name="text">
+               <string>Текст</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="lineEdit_8"/>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QWidget" name="correctWidtget_2" native="true">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_6">
+            <item>
+             <widget class="QLabel" name="label_6">
+              <property name="text">
+               <string>Тег 5</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton_6">
+              <property name="text">
+               <string>Исправить</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="textToChangeLabel_6">
+              <property name="text">
+               <string>Текст</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="lineEdit_6"/>
             </item>
            </layout>
           </widget>
