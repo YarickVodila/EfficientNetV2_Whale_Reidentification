@@ -102,6 +102,8 @@ class Ui_MainWindow(object):
         self.frame_2 = QtWidgets.QFrame(self.CentralF)
         self.frame_2.setMinimumSize(QtCore.QSize(150, 100))
         self.frame_2.setMaximumSize(QtCore.QSize(16777215, 100))
+        self.frame_2.setStyleSheet("border:1px solid black;\n"
+"border-radius:5px")
         self.frame_2.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame_2.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame_2.setObjectName("frame_2")
@@ -175,7 +177,7 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.label_3.setText(_translate("MainWindow", "Пожалуйста, выберете картинку в списке слева"))
+        self.label_3.setText(_translate("MainWindow", "Пожалуйста, выберите картинку в списке слева"))
         self.BackButton.setText(_translate("MainWindow", "Загрузить снова"))
         self.pushButton.setText(_translate("MainWindow", "Исправить теги"))
 

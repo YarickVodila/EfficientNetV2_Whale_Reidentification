@@ -170,7 +170,7 @@ border: 1px solid</string>
              <string notr="true">border:None;</string>
             </property>
             <property name="text">
-             <string>Пожалуйста, выберете картинку в списке слева</string>
+             <string>Пожалуйста, выберите картинку в списке слева</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -193,6 +193,10 @@ border: 1px solid</string>
            <width>16777215</width>
            <height>100</height>
           </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border:1px solid black;
+border-radius:5px</string>
          </property>
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
