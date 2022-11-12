@@ -1,329 +1,336 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
-    <class>MainWindow</class>
-    <widget class="QMainWindow" name="MainWindow">
-        <property name="geometry">
-            <rect>
-                <x>0</x>
-                <y>0</y>
-                <width>1064</width>
-                <height>730</height>
-            </rect>
-        </property>
-        <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-            </sizepolicy>
-        </property>
-        <property name="windowTitle">
-            <string>MainWindow</string>
-        </property>
-        <property name="styleSheet">
-            <string notr="true">background-color: rgb(255, 255, 255);</string>
-        </property>
-        <widget class="QWidget" name="centralwidget">
-            <property name="styleSheet">
-                <string notr="true">background-color: rgb(255, 255, 255);</string>
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1064</width>
+    <height>733</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QFrame" name="LeftF">
+      <property name="maximumSize">
+       <size>
+        <width>200</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="0">
+        <widget class="QGroupBox" name="ArchiveBox">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>13</pointsize>
+           <weight>50</weight>
+           <italic>true</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border:1px solid black;
+border-radius: 5px;</string>
+         </property>
+         <property name="title">
+          <string/>
+         </property>
+         <property name="flat">
+          <bool>false</bool>
+         </property>
+         <property name="checkable">
+          <bool>false</bool>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="0" column="0">
+           <widget class="QScrollArea" name="scrollArea">
+            <property name="widgetResizable">
+             <bool>true</bool>
             </property>
-            <layout class="QHBoxLayout" name="horizontalLayout">
-                <item>
-                    <widget class="QFrame" name="LeftF">
-                        <property name="maximumSize">
-                            <size>
-                                <width>200</width>
-                                <height>16777215</height>
-                            </size>
-                        </property>
-                        <property name="styleSheet">
-                            <string notr="true">background-color: rgb(255, 255, 255);</string>
-                        </property>
-                        <property name="frameShape">
-                            <enum>QFrame::StyledPanel</enum>
-                        </property>
-                        <property name="frameShadow">
-                            <enum>QFrame::Raised</enum>
-                        </property>
-                        <layout class="QGridLayout" name="gridLayout">
-                            <item row="0" column="0">
-                                <widget class="QGroupBox" name="ArchiveBox">
-                                    <property name="sizePolicy">
-                                        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                                            <horstretch>0</horstretch>
-                                            <verstretch>0</verstretch>
-                                        </sizepolicy>
-                                    </property>
-                                    <property name="minimumSize">
-                                        <size>
-                                            <width>0</width>
-                                            <height>0</height>
-                                        </size>
-                                    </property>
-                                    <property name="maximumSize">
-                                        <size>
-                                            <width>16777215</width>
-                                            <height>16777215</height>
-                                        </size>
-                                    </property>
-                                    <property name="font">
-                                        <font>
-                                            <family>Arial</family>
-                                            <pointsize>13</pointsize>
-                                            <weight>50</weight>
-                                            <italic>true</italic>
-                                            <bold>false</bold>
-                                        </font>
-                                    </property>
-                                    <property name="styleSheet">
-                                        <string notr="true">border:1px solid black;
-                                            border-radius: 5px;
-                                        </string>
-                                    </property>
-                                    <property name="title">
-                                        <string/>
-                                    </property>
-                                    <property name="flat">
-                                        <bool>false</bool>
-                                    </property>
-                                    <property name="checkable">
-                                        <bool>false</bool>
-                                    </property>
-                                    <property name="checked">
-                                        <bool>false</bool>
-                                    </property>
-                                    <layout class="QGridLayout" name="gridLayout_2">
-                                        <item row="0" column="0">
-                                            <widget class="QScrollArea" name="scrollArea">
-                                                <property name="widgetResizable">
-                                                    <bool>true</bool>
-                                                </property>
-                                                <widget class="QWidget" name="scrollAreaWidgetContents">
-                                                    <property name="geometry">
-                                                        <rect>
-                                                            <x>0</x>
-                                                            <y>0</y>
-                                                            <width>158</width>
-                                                            <height>650</height>
-                                                        </rect>
-                                                    </property>
-                                                    <layout class="QVBoxLayout" name="verticalLayout_2">
-                                                        <item>
-                                                            <widget class="QLabel" name="Whale_14">
-                                                                <property name="sizePolicy">
-                                                                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                                                                        <horstretch>0</horstretch>
-                                                                        <verstretch>0</verstretch>
-                                                                    </sizepolicy>
-                                                                </property>
-                                                                <property name="minimumSize">
-                                                                    <size>
-                                                                        <width>100</width>
-                                                                        <height>100</height>
-                                                                    </size>
-                                                                </property>
-                                                                <property name="maximumSize">
-                                                                    <size>
-                                                                        <width>100</width>
-                                                                        <height>100</height>
-                                                                    </size>
-                                                                </property>
-                                                                <property name="styleSheet">
-                                                                    <string notr="true">background-color: rgb(77, 77,
-                                                                        77);
-                                                                    </string>
-                                                                </property>
-                                                                <property name="text">
-                                                                    <string>Виджет с Китом</string>
-                                                                </property>
-                                                            </widget>
-                                                        </item>
-                                                    </layout>
-                                                </widget>
-                                            </widget>
-                                        </item>
-                                    </layout>
-                                </widget>
-                            </item>
-                        </layout>
-                    </widget>
-                </item>
-                <item>
-                    <widget class="QFrame" name="CentralF">
-                        <property name="styleSheet">
-                            <string notr="true">border: solid 1px black;
-                                border-radius: 5px;
-                            </string>
-                        </property>
-                        <property name="frameShape">
-                            <enum>QFrame::StyledPanel</enum>
-                        </property>
-                        <property name="frameShadow">
-                            <enum>QFrame::Raised</enum>
-                        </property>
-                        <layout class="QVBoxLayout" name="verticalLayout">
-                            <item>
-                                <widget class="QFrame" name="frame">
-                                    <property name="styleSheet">
-                                        <string notr="true">background-color: rgb(200, 200, 200);</string>
-                                    </property>
-                                    <property name="frameShape">
-                                        <enum>QFrame::StyledPanel</enum>
-                                    </property>
-                                    <property name="frameShadow">
-                                        <enum>QFrame::Raised</enum>
-                                    </property>
-                                    <layout class="QGridLayout" name="gridLayout_4">
-                                        <item row="0" column="0">
-                                            <widget class="QLabel" name="label_3">
-                                                <property name="minimumSize">
-                                                    <size>
-                                                        <width>500</width>
-                                                        <height>550</height>
-                                                    </size>
-                                                </property>
-                                                <property name="font">
-                                                    <font>
-                                                        <weight>50</weight>
-                                                        <italic>false</italic>
-                                                        <bold>false</bold>
-                                                        <kerning>true</kerning>
-                                                    </font>
-                                                </property>
-                                                <property name="text">
-                                                    <string>Тут картинка с китами</string>
-                                                </property>
-                                                <property name="alignment">
-                                                    <set>Qt::AlignCenter</set>
-                                                </property>
-                                            </widget>
-                                        </item>
-                                    </layout>
-                                </widget>
-                            </item>
-                            <item>
-                                <widget class="QFrame" name="frame_2">
-                                    <property name="minimumSize">
-                                        <size>
-                                            <width>150</width>
-                                            <height>100</height>
-                                        </size>
-                                    </property>
-                                    <property name="maximumSize">
-                                        <size>
-                                            <width>16777215</width>
-                                            <height>100</height>
-                                        </size>
-                                    </property>
-                                    <property name="frameShape">
-                                        <enum>QFrame::StyledPanel</enum>
-                                    </property>
-                                    <property name="frameShadow">
-                                        <enum>QFrame::Raised</enum>
-                                    </property>
-                                    <layout class="QGridLayout" name="gridLayout_5">
-                                        <item row="0" column="0">
-                                            <widget class="QLabel" name="label_2">
-                                                <property name="minimumSize">
-                                                    <size>
-                                                        <width>500</width>
-                                                        <height>0</height>
-                                                    </size>
-                                                </property>
-                                                <property name="styleSheet">
-                                                    <string notr="true">background-color: rgb(200, 200, 200);</string>
-                                                </property>
-                                                <property name="text">
-                                                    <string>Тут набор тегов</string>
-                                                </property>
-                                                <property name="alignment">
-                                                    <set>Qt::AlignCenter</set>
-                                                </property>
-                                            </widget>
-                                        </item>
-                                    </layout>
-                                </widget>
-                            </item>
-                        </layout>
-                    </widget>
-                </item>
-                <item>
-                    <widget class="QFrame" name="Right">
-                        <property name="maximumSize">
-                            <size>
-                                <width>250</width>
-                                <height>16777215</height>
-                            </size>
-                        </property>
-                        <property name="styleSheet">
-                            <string notr="true">font: 75 13pt &quot;Arial&quot;;</string>
-                        </property>
-                        <property name="frameShape">
-                            <enum>QFrame::StyledPanel</enum>
-                        </property>
-                        <property name="frameShadow">
-                            <enum>QFrame::Raised</enum>
-                        </property>
-                        <layout class="QGridLayout" name="gridLayout_3">
-                            <item row="0" column="0">
-                                <widget class="QPushButton" name="BackButton">
-                                    <property name="sizePolicy">
-                                        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                                            <horstretch>0</horstretch>
-                                            <verstretch>0</verstretch>
-                                        </sizepolicy>
-                                    </property>
-                                    <property name="minimumSize">
-                                        <size>
-                                            <width>200</width>
-                                            <height>20</height>
-                                        </size>
-                                    </property>
-                                    <property name="text">
-                                        <string>Загрузить снова</string>
-                                    </property>
-                                </widget>
-                            </item>
-                            <item row="1" column="0">
-                                <widget class="QGroupBox" name="groupBox">
-                                    <property name="minimumSize">
-                                        <size>
-                                            <width>200</width>
-                                            <height>0</height>
-                                        </size>
-                                    </property>
-                                    <property name="maximumSize">
-                                        <size>
-                                            <width>200</width>
-                                            <height>16777215</height>
-                                        </size>
-                                    </property>
-                                    <property name="font">
-                                        <font>
-                                            <family>Arial</family>
-                                            <pointsize>13</pointsize>
-                                            <weight>9</weight>
-                                            <italic>false</italic>
-                                            <bold>false</bold>
-                                        </font>
-                                    </property>
-                                    <property name="styleSheet">
-                                        <string notr="true">font: 75 13pt &quot;Arial&quot;;
-                                            border:1px solid black;
-                                            border-radius: 10px;
-                                        </string>
-                                    </property>
-                                    <property name="title">
-                                        <string/>
-                                    </property>
-                                </widget>
-                            </item>
-                        </layout>
-                    </widget>
-                </item>
-            </layout>
+            <widget class="QWidget" name="scrollAreaWidgetContents">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>0</y>
+               <width>158</width>
+               <height>653</height>
+              </rect>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_2">
+              <item>
+               <widget class="QLabel" name="Whale_14">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>100</width>
+                  <height>100</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>100</width>
+                  <height>100</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(77, 77, 77);</string>
+                </property>
+                <property name="text">
+                 <string>Виджет с Китом</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </widget>
+          </item>
+         </layout>
         </widget>
-        <widget class="QStatusBar" name="statusbar"/>
-    </widget>
-    <resources/>
-    <connections/>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="CentralF">
+      <property name="styleSheet">
+       <string notr="true">border: solid 1px black;
+border-radius: 5px;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QFrame" name="frame">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(200, 200, 200);</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_4">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_3">
+            <property name="minimumSize">
+             <size>
+              <width>500</width>
+              <height>550</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <weight>50</weight>
+              <italic>false</italic>
+              <bold>false</bold>
+              <kerning>true</kerning>
+             </font>
+            </property>
+            <property name="text">
+             <string>Тут картинка с китами</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_2">
+         <property name="minimumSize">
+          <size>
+           <width>150</width>
+           <height>100</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>100</height>
+          </size>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_5">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_2">
+            <property name="minimumSize">
+             <size>
+              <width>500</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(200, 200, 200);</string>
+            </property>
+            <property name="text">
+             <string>Тут набор тегов</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="Right">
+      <property name="maximumSize">
+       <size>
+        <width>250</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 75 13pt &quot;Arial&quot;;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="0" column="0">
+        <widget class="QPushButton" name="BackButton">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>200</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Загрузить снова</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QGroupBox" name="groupBox">
+         <property name="minimumSize">
+          <size>
+           <width>200</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>200</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>13</pointsize>
+           <weight>9</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font: 75 13pt &quot;Arial&quot;;
+border:1px solid black;
+border-radius: 10px;</string>
+         </property>
+         <property name="title">
+          <string/>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <widget class="QPushButton" name="pushButton">
+            <property name="text">
+             <string>Исправить положение</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
 </ui>

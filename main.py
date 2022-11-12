@@ -1,7 +1,7 @@
 import sys
 from functools import partial
 
-from PyQt6.QtWidgets import QApplication, QMainWindow
+from PyQt6.QtWidgets import QApplication, QMainWindow, QLabel
 
 from firstPage import Ui_IIntegrationWhale
 from mainPage import Ui_MainWindow
@@ -16,6 +16,7 @@ class MainPageWindow(QMainWindow):
         self.mainPageWindow.BackButton.clicked.connect(self.back)
         self.createWhaleWitged("image.jpg")
         self.createWhaleWitged("7ba843ae6b3493b63c4131499d34533f.jpg")
+        self.addTags()
 
     def back(self):
         self.firstPageWindow = FirstPage()
@@ -32,6 +33,17 @@ class MainPageWindow(QMainWindow):
         self.mainPageWindow.label_3.setScaledContents(True)
         whale.selected()
         self.mainPageWindow.label_3.setPixmap(whale.pixmap)
+
+
+    def addTags(self, tags=None):
+        if tags is None:
+            tags = {'1': '1 Место по вироятности кита', '2': "2 Место по вироятности кита",'3': "3 Место по вироятности кита",'4': "4 Место по вироятности кита",'5': "5 Место по вироятности кита"}
+        for i in tags:
+            print(i)
+            self.label = QLabel(self.mainPageWindow.frame_2)
+            self.label.setText(tags[i])
+            self.mainPageWindow.gridLayout_5.addWidget(self.label)
+
 
 
 class FirstPage(QMainWindow):
