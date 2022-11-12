@@ -43,6 +43,7 @@ class MainPageWindow(QMainWindow):
         for i in tags:
             self.label = QLabel(self.mainPageWindow.frame_2)
             self.label.setText(tags[i])
+            self.label.setStyleSheet('border:None;')
             self.mainPageWindow.gridLayout_5.addWidget(self.label)
 
     def clearTags(self):
