@@ -1,7 +1,8 @@
 import sys
+from PyQt6 import uic
 from functools import partial
 
-from PyQt6.QtWidgets import QApplication, QMainWindow, QLabel, QFileDialog
+from PyQt6.QtWidgets import QApplication, QMainWindow, QLabel, QFileDialog, QWidget
 
 from firstPage import Ui_IIntegrationWhale
 from mainPage import Ui_MainWindow
@@ -15,6 +16,7 @@ class MainPageWindow(QMainWindow):
         self.mainPageWindow = Ui_MainWindow()
         self.mainPageWindow.setupUi(self)
         self.mainPageWindow.BackButton.clicked.connect(self.back)
+        self.mainPageWindow.pushButton.clicked.connect(self.correctButtonInit)
         for i in images:
             self.createWhaleWitged(i)
 
@@ -64,6 +66,11 @@ class MainPageWindow(QMainWindow):
             self.mainPageWindow.gridLayout_5.itemAt(i).widget().deleteLater()
 
 
+    def correctButtonInit(self):
+        self.correctWindow = CorrectForm()
+
+
+
 class FirstPage(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -81,6 +88,13 @@ class FirstPage(QMainWindow):
         self.mainPageWindow = MainPageWindow(fnames[0])
         self.mainPageWindow.show()
         self.hide()
+
+
+class CorrectForm(QWidget):
+    def __init__(self):
+        super(CorrectForm, self).__init__()  # Call the inherited classes __init__ method
+        ui = uic.loadUi('correctForm.ui', self)
+        self.show()
 
 
 if __name__ == "__main__":
