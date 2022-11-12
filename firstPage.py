@@ -38,10 +38,10 @@ class Ui_IIntegrationWhale(object):
         self.pushButton.setTabletTracking(False)
         self.pushButton.setAutoFillBackground(False)
         self.pushButton.setStyleSheet("background-color: rgb(63, 169, 245);\n"
-"color: rgb(255, 255, 255);\n"
-"font: 25 24pt \"Calibri Light\";\n"
-"gridline-color: rgb(255, 255, 255);\n"
-"selection-color: rgb(255, 255, 255);")
+                                      "color: rgb(255, 255, 255);\n"
+                                      "font: 25 24pt \"Calibri Light\";\n"
+                                      "gridline-color: rgb(255, 255, 255);\n"
+                                      "selection-color: rgb(255, 255, 255);")
         self.pushButton.setCheckable(False)
         self.pushButton.setAutoDefault(True)
         self.pushButton.setDefault(False)
@@ -80,6 +80,7 @@ class Ui_IIntegrationWhale(object):
 
 if __name__ == "__main__":
     import sys
+
     app = QtWidgets.QApplication(sys.argv)
     IIntegrationWhale = QtWidgets.QMainWindow()
     ui = Ui_IIntegrationWhale()

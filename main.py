@@ -1,9 +1,11 @@
-from PyQt6 import uic, QtWidgets, QtCore
-from PyQt6.QtWidgets import QApplication, QMainWindow, QWidget
-from mainPage import Ui_MainWindow
-from firstPage import Ui_IIntegrationWhale
-from whaleWitget import WhaleCont
 import sys
+from functools import partial
+
+from PyQt6.QtWidgets import QApplication, QMainWindow
+
+from firstPage import Ui_IIntegrationWhale
+from mainPage import Ui_MainWindow
+from whaleWitget import WhaleCont
 
 
 class MainPageWindow(QMainWindow):
@@ -12,28 +14,24 @@ class MainPageWindow(QMainWindow):
         self.mainPageWindow = Ui_MainWindow()
         self.mainPageWindow.setupUi(self)
         self.mainPageWindow.BackButton.clicked.connect(self.back)
-        self.createWhaleWitged()
-
-
+        self.createWhaleWitged("image.jpg")
+        self.createWhaleWitged("7ba843ae6b3493b63c4131499d34533f.jpg")
 
     def back(self):
         self.firstPageWindow = FirstPage()
         self.firstPageWindow.show()
         self.hide()
 
+    def createWhaleWitged(self, img):
+        whaleWidget = WhaleCont(img)
+        whaleWidget.setStyleSheet("background-color: rgb(77, 77, 77);")
+        whaleWidget.label.mousePressEvent = partial(self.changeWhaleMainImage, whaleWidget)
+        self.mainPageWindow.verticalLayout_2.addWidget(whaleWidget)
 
-    def createWhaleWitged(self):
-        self.whaleWidget = WhaleCont()
-        self.whaleWidget.setStyleSheet("background-color: rgb(77, 77, 77);")
-        self.mainPageWindow.verticalLayout_2.addWidget(self.whaleWidget)
-        self.whaleWidget.label.mousePressEvent = self.changeWhaleMainImage
-
-
-    def changeWhaleMainImage(self, *args, **kwargs):
+    def changeWhaleMainImage(self, whale, *args, **kwargs):
         self.mainPageWindow.label_3.setStyleSheet('border:2px solid black')
-        self.whaleWidget.selected()
-
-
+        whale.selected()
+        self.mainPageWindow.label_3.setPixmap(whale.pixmap)
 
 
 class FirstPage(QMainWindow):
@@ -47,13 +45,6 @@ class FirstPage(QMainWindow):
         self.mainPageWindow = MainPageWindow()
         self.mainPageWindow.show()
         self.hide()
-
-
-
-
-
-
-
 
 
 if __name__ == "__main__":

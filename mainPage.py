@@ -33,7 +33,8 @@ class Ui_MainWindow(object):
         self.gridLayout = QtWidgets.QGridLayout(self.LeftF)
         self.gridLayout.setObjectName("gridLayout")
         self.ArchiveBox = QtWidgets.QGroupBox(self.LeftF)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred,
+                                           QtWidgets.QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.ArchiveBox.sizePolicy().hasHeightForWidth())
@@ -48,7 +49,7 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.ArchiveBox.setFont(font)
         self.ArchiveBox.setStyleSheet("border:1px solid black;\n"
-"border-radius: 5px;")
+                                      "border-radius: 5px;")
         self.ArchiveBox.setTitle("")
         self.ArchiveBox.setFlat(False)
         self.ArchiveBox.setCheckable(False)
@@ -64,24 +65,24 @@ class Ui_MainWindow(object):
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
-        #self.Whale_14 = QtWidgets.QLabel(self.scrollAreaWidgetContents)
+        # self.Whale_14 = QtWidgets.QLabel(self.scrollAreaWidgetContents)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Fixed, QtWidgets.QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-       # sizePolicy.setHeightForWidth(self.Whale_14.sizePolicy().hasHeightForWidth())
-        #self.Whale_14.setSizePolicy(sizePolicy)
-        #self.Whale_14.setMinimumSize(QtCore.QSize(100, 100))
-        #self.Whale_14.setMaximumSize(QtCore.QSize(100, 100))
-        #self.Whale_14.setStyleSheet("background-color: rgb(77, 77, 77);")
-        #self.Whale_14.setObjectName("Whale_14")
-        #self.verticalLayout_2.addWidget(self.Whale_14)
+        # sizePolicy.setHeightForWidth(self.Whale_14.sizePolicy().hasHeightForWidth())
+        # self.Whale_14.setSizePolicy(sizePolicy)
+        # self.Whale_14.setMinimumSize(QtCore.QSize(100, 100))
+        # self.Whale_14.setMaximumSize(QtCore.QSize(100, 100))
+        # self.Whale_14.setStyleSheet("background-color: rgb(77, 77, 77);")
+        # self.Whale_14.setObjectName("Whale_14")
+        # self.verticalLayout_2.addWidget(self.Whale_14)
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
         self.gridLayout_2.addWidget(self.scrollArea, 0, 0, 1, 1)
         self.gridLayout.addWidget(self.ArchiveBox, 0, 0, 1, 1)
         self.horizontalLayout.addWidget(self.LeftF)
         self.CentralF = QtWidgets.QFrame(self.centralwidget)
         self.CentralF.setStyleSheet("border: solid 1px black;\n"
-"border-radius: 5px;")
+                                    "border-radius: 5px;")
         self.CentralF.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.CentralF.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.CentralF.setObjectName("CentralF")
@@ -150,8 +151,8 @@ class Ui_MainWindow(object):
         font.setWeight(9)
         self.groupBox.setFont(font)
         self.groupBox.setStyleSheet("font: 75 13pt \"Arial\";\n"
-"border:1px solid black;\n"
-"border-radius: 10px;")
+                                    "border:1px solid black;\n"
+                                    "border-radius: 10px;")
         self.groupBox.setTitle("")
         self.groupBox.setObjectName("groupBox")
         self.gridLayout_3.addWidget(self.groupBox, 1, 0, 1, 1)
@@ -167,7 +168,7 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        #self.Whale_14.setText(_translate("MainWindow", "Виджет с Китом"))
+        # self.Whale_14.setText(_translate("MainWindow", "Виджет с Китом"))
         self.label_3.setText(_translate("MainWindow", "Тут картинка с китами"))
         self.label_2.setText(_translate("MainWindow", "Тут набор тегов"))
         self.BackButton.setText(_translate("MainWindow", "Загрузить снова"))
@@ -175,6 +176,7 @@ class Ui_MainWindow(object):
 
 if __name__ == "__main__":
     import sys
+
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()

@@ -1,16 +1,15 @@
-from PyQt6 import QtCore, QtGui, QtWidgets
+from PyQt6 import QtCore, QtWidgets
 from PyQt6.QtGui import QPixmap
 
 
 class WhaleCont(QtWidgets.QWidget):
     classes = ['/']
-    jpg = '7ba843ae6b3493b63c4131499d34533f.jpg'
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self, img, *args, **kwargs):
         super(WhaleCont, self).__init__(*args, **kwargs)
         layout = QtWidgets.QVBoxLayout()
         self.label = QtWidgets.QLabel()
-        self.pixmap = QPixmap(self.jpg)
+        self.pixmap = QPixmap(img)
         self.label.mousePressEvent = self.selected
         self.label.setPixmap(self.pixmap)
         self.label.setScaledContents(True)
@@ -25,5 +24,5 @@ class WhaleCont(QtWidgets.QWidget):
         self.setLayout(layout)
 
     def selected(self, *args, **kwargs):
-        self.label.setText('Нажато')
-
+        # self.label.setText('Нажато')
+        pass
