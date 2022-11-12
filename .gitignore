@@ -175,16 +175,5 @@ cython_debug/
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
-/mainPageTest.py
-/7ba843ae6b3493b63c4131499d34533f — копия.jpg
-/7ba843ae6b3493b63c4131499d34533f — копия (2).jpg
-/7ba843ae6b3493b63c4131499d34533f — копия (3).jpg
-/7ba843ae6b3493b63c4131499d34533f — копия (4).jpg
-/7ba843ae6b3493b63c4131499d34533f — копия (5).jpg
-/7ba843ae6b3493b63c4131499d34533f — копия (6).jpg
-/7ba843ae6b3493b63c4131499d34533f — копия (7).jpg
-/7ba843ae6b3493b63c4131499d34533f — копия (8).jpg
-/7ba843ae6b3493b63c4131499d34533f — копия (9).jpg
-/7ba843ae6b3493b63c4131499d34533f — копия (10).jpg
-/7ba843ae6b3493b63c4131499d34533f — копия (11).jpg
-/7ba843ae6b3493b63c4131499d34533f — копия (12).jpg
+*.jpg
+*.png
