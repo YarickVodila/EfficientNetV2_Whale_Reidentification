@@ -17,7 +17,6 @@ class MainPageWindow(QMainWindow):
         self.createWhaleWitged("image.jpg")
         self.createWhaleWitged("7ba843ae6b3493b63c4131499d34533f.jpg")
         self.addTags()
-        self.clearTags()
 
     def back(self):
         self.firstPageWindow = FirstPage()
