@@ -24,7 +24,7 @@ class MainPageWindow(QMainWindow):
 
     def createWhaleWitged(self, img):
         whaleWidget = WhaleCont(img)
-        whaleWidget.setStyleSheet("background-color: rgb(77, 77, 77);")
+        whaleWidget.setStyleSheet("background-color: rgb(77, 77, 77); border-radius:0px; border:1px solid black")
         whaleWidget.label.mousePressEvent = partial(self.changeWhaleMain, whaleWidget)
         self.mainPageWindow.verticalLayout_2.addWidget(whaleWidget)
 

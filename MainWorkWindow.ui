@@ -99,6 +99,9 @@ border-radius: 5px;</string>
          <layout class="QGridLayout" name="gridLayout_2">
           <item row="0" column="0">
            <widget class="QScrollArea" name="scrollArea">
+            <property name="styleSheet">
+             <string notr="true">border:None;</string>
+            </property>
             <property name="widgetResizable">
              <bool>true</bool>
             </property>
@@ -107,8 +110,8 @@ border-radius: 5px;</string>
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>158</width>
-               <height>653</height>
+               <width>160</width>
+               <height>655</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_2"/>
@@ -147,7 +150,7 @@ border: 1px solid</string>
           <enum>QFrame::Raised</enum>
          </property>
          <layout class="QGridLayout" name="gridLayout_4">
-          <item row="0" column="0">
+          <item row="0" column="1">
            <widget class="QLabel" name="label_3">
             <property name="minimumSize">
              <size>
@@ -221,7 +224,7 @@ border: 1px solid</string>
        <enum>QFrame::Raised</enum>
       </property>
       <layout class="QGridLayout" name="gridLayout_3">
-       <item row="1" column="0">
+       <item row="0" column="0">
         <widget class="QGroupBox" name="groupBox">
          <property name="minimumSize">
           <size>
@@ -252,8 +255,8 @@ border-radius: 10px;</string>
          <property name="title">
           <string/>
          </property>
-         <layout class="QFormLayout" name="formLayout">
-          <item row="0" column="0">
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
            <widget class="QPushButton" name="BackButton">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -272,7 +275,7 @@ border-radius: 10px;</string>
             </property>
            </widget>
           </item>
-          <item row="1" column="0">
+          <item>
            <widget class="QPushButton" name="pushButton">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -287,7 +290,42 @@ border-radius: 10px;</string>
              </size>
             </property>
             <property name="text">
-             <string>Исправить положение</string>
+             <string>Исправить теги</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLabel" name="label">
+            <property name="maximumSize">
+             <size>
+              <width>200</width>
+              <height>200</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border:None;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>photo_2022-11-12_20-44-35.jpg</pixmap>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
             </property>
            </widget>
           </item>
