@@ -12,8 +12,10 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_IIntegrationWhale(object):
     def setupUi(self, IIntegrationWhale):
         IIntegrationWhale.setObjectName("IIntegrationWhale")
+        IIntegrationWhale.setWindowTitle('Кит')
         IIntegrationWhale.setEnabled(True)
         IIntegrationWhale.resize(800, 542)
+
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Minimum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -74,7 +76,7 @@ class Ui_IIntegrationWhale(object):
 
     def retranslateUi(self, IIntegrationWhale):
         _translate = QtCore.QCoreApplication.translate
-        IIntegrationWhale.setWindowTitle(_translate("IIntegrationWhale", "MainWindow"))
+        IIntegrationWhale.setWindowTitle(_translate("IIntegrationWhale", "Кито`омайзер"))
         self.pushButton.setText(_translate("IIntegrationWhale", "Выберите файл"))
 
 
