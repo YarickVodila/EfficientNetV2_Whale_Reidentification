@@ -16,7 +16,6 @@ class MainPageWindow(QMainWindow):
         self.mainPageWindow.BackButton.clicked.connect(self.back)
         for i in images:
             self.createWhaleWitged(i)
-        self.addTags()
 
     def back(self):
         self.firstPageWindow = FirstPage()
@@ -26,12 +25,14 @@ class MainPageWindow(QMainWindow):
     def createWhaleWitged(self, img):
         whaleWidget = WhaleCont(img)
         whaleWidget.setStyleSheet("background-color: rgb(77, 77, 77);")
-        whaleWidget.label.mousePressEvent = partial(self.changeWhaleMainImage, whaleWidget)
+        whaleWidget.label.mousePressEvent = partial(self.changeWhaleMain, whaleWidget)
         self.mainPageWindow.verticalLayout_2.addWidget(whaleWidget)
 
-    def changeWhaleMainImage(self, whale, *args, **kwargs):
+    def changeWhaleMain(self, whale, *args, **kwargs):
         self.mainPageWindow.label_3.setScaledContents(True)
         whale.selected()
+        self.addTags(whale.classes)
+        print(whale.classes)
         self.mainPageWindow.label_3.setPixmap(whale.pixmap)
 
     def addTags(self, tags=None):
