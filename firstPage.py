@@ -12,10 +12,8 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_IIntegrationWhale(object):
     def setupUi(self, IIntegrationWhale):
         IIntegrationWhale.setObjectName("IIntegrationWhale")
-        IIntegrationWhale.setWindowTitle('Кит')
         IIntegrationWhale.setEnabled(True)
         IIntegrationWhale.resize(800, 542)
-
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Minimum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -40,10 +38,10 @@ class Ui_IIntegrationWhale(object):
         self.pushButton.setTabletTracking(False)
         self.pushButton.setAutoFillBackground(False)
         self.pushButton.setStyleSheet("background-color: rgb(63, 169, 245);\n"
-                                      "color: rgb(255, 255, 255);\n"
-                                      "font: 25 24pt \"Calibri Light\";\n"
-                                      "gridline-color: rgb(255, 255, 255);\n"
-                                      "selection-color: rgb(255, 255, 255);")
+"color: rgb(255, 255, 255);\n"
+"font: 25 24pt \"Calibri Light\";\n"
+"gridline-color: rgb(255, 255, 255);\n"
+"selection-color: rgb(255, 255, 255);")
         self.pushButton.setCheckable(False)
         self.pushButton.setAutoDefault(True)
         self.pushButton.setDefault(False)
@@ -69,6 +67,11 @@ class Ui_IIntegrationWhale(object):
         self.label.setPixmap(QtGui.QPixmap("../../Downloads/photo_2022-11-12_09-47-40.jpg"))
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
+        self.label_2 = QtWidgets.QLabel(self.centralwidget)
+        self.label_2.setGeometry(QtCore.QRect(207, 520, 391, 20))
+        self.label_2.setStyleSheet("font: 7pt \"MS Shell Dlg 2\";\n"
+"color: rgba(0, 0, 0, 200);")
+        self.label_2.setObjectName("label_2")
         IIntegrationWhale.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(IIntegrationWhale)
@@ -76,13 +79,13 @@ class Ui_IIntegrationWhale(object):
 
     def retranslateUi(self, IIntegrationWhale):
         _translate = QtCore.QCoreApplication.translate
-        IIntegrationWhale.setWindowTitle(_translate("IIntegrationWhale", "Кито`омайзер"))
+        IIntegrationWhale.setWindowTitle(_translate("IIntegrationWhale", "MainWindow"))
         self.pushButton.setText(_translate("IIntegrationWhale", "Выберите файл"))
+        self.label_2.setText(_translate("IIntegrationWhale", "Сгенерированные размечанные данные будут сохранены в корневом каталоге программы"))
 
 
 if __name__ == "__main__":
     import sys
-
     app = QtWidgets.QApplication(sys.argv)
     IIntegrationWhale = QtWidgets.QMainWindow()
     ui = Ui_IIntegrationWhale()
