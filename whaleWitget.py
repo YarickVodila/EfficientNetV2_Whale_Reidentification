@@ -12,6 +12,7 @@ class WhaleCont(QtWidgets.QWidget):
         self.pixmap = QPixmap(self.jpg)
         self.label.mousePressEvent = self.selected
         self.label.setPixmap(self.pixmap)
+        self.label.setScaledContents(True)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Fixed, QtWidgets.QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
