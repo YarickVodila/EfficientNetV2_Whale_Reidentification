@@ -3,14 +3,15 @@ from PyQt6.QtGui import QPixmap
 
 
 class WhaleCont(QtWidgets.QWidget):
-    jpg = '12312'
+    classes = ['/']
+    jpg = '7ba843ae6b3493b63c4131499d34533f.jpg'
     def __init__(self, *args, **kwargs):
         super(WhaleCont, self).__init__(*args, **kwargs)
         layout = QtWidgets.QVBoxLayout()
         self.label = QtWidgets.QLabel()
         self.pixmap = QPixmap(self.jpg)
         self.label.mousePressEvent = self.selected
-        self.label.setText('Ты пидор')
+        self.label.setPixmap(self.pixmap)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Fixed, QtWidgets.QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
