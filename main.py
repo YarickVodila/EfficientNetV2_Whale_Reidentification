@@ -1,4 +1,4 @@
-from PyQt6 import uic, QtWidgets
+from PyQt6 import uic, QtWidgets, QtCore
 from PyQt6.QtWidgets import QApplication, QMainWindow, QWidget
 from mainPage import Ui_MainWindow
 from firstPage import Ui_IIntegrationWhale
@@ -14,6 +14,10 @@ class MainPageWindow(QMainWindow):
         self.mainPageWindow.BackButton.clicked.connect(self.back)
         self.createWhaleWitged()
 
+
+
+
+
     def back(self):
         self.firstPageWindow = FirstPage()
         self.firstPageWindow.show()
@@ -21,8 +25,11 @@ class MainPageWindow(QMainWindow):
 
 
     def createWhaleWitged(self):
-        self.mainPageWindow.whaleWitged = WhaleCont(self.mainPageWindow.scrollAreaWidgetContents)
-        print('sda')
+        self.whaleWidget = WhaleCont()
+        self.whaleWidget.setStyleSheet("background-color: rgb(77, 77, 77);")
+        self.mainPageWindow.verticalLayout_2.addWidget(self.whaleWidget)
+
+
 
 
 class FirstPage(QMainWindow):
