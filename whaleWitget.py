@@ -3,14 +3,14 @@ from PyQt6.QtGui import QPixmap
 
 
 class WhaleCont(QtWidgets.QWidget):
-    classes = {"1": 'Биба', "2": "Боба"}
-    selected = False
-    def __init__(self, img, *args, **kwargs):
+    def __init__(self, img, classes, *args, **kwargs):
         super(WhaleCont, self).__init__(*args, **kwargs)
+        self.selected = False
+        self.classes = classes
         layout = QtWidgets.QVBoxLayout()
         self.label = QtWidgets.QLabel()
         self.pixmap = QPixmap(img)
-        self.label.mousePressEvent = self.selectedInit
+        self.label.mousePressEvent = self.selected
         self.label.setPixmap(self.pixmap)
         self.label.setScaledContents(True)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Fixed, QtWidgets.QSizePolicy.Policy.Fixed)
@@ -29,13 +29,8 @@ class WhaleCont(QtWidgets.QWidget):
         else:
             self.selected = True
 
-
     def deselect(self):
         self.label.setStyleSheet('border:1px solid black;')
 
-
     def select(self):
         self.label.setStyleSheet('border:3px solid cyan;')
-
-
-
