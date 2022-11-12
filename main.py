@@ -29,7 +29,7 @@ class MainPageWindow(QMainWindow):
         self.mainPageWindow.verticalLayout_2.addWidget(whaleWidget)
 
     def changeWhaleMainImage(self, whale, *args, **kwargs):
-        self.mainPageWindow.label_3.setStyleSheet('border:2px solid black')
+        self.mainPageWindow.label_3.setScaledContents(True)
         whale.selected()
         self.mainPageWindow.label_3.setPixmap(whale.pixmap)
 
