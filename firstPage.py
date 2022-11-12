@@ -10,7 +10,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 
 
 class Ui_IIntegrationWhale(object):
-    def setupFirstPageUi(self, IIntegrationWhale):
+    def setupUi(self, IIntegrationWhale):
         IIntegrationWhale.setObjectName("IIntegrationWhale")
         IIntegrationWhale.setEnabled(True)
         IIntegrationWhale.resize(800, 542)
@@ -25,10 +25,9 @@ class Ui_IIntegrationWhale(object):
         IIntegrationWhale.setStyleSheet("background-color:rgb(255, 255, 255);")
         self.centralwidget = QtWidgets.QWidget(IIntegrationWhale)
         self.centralwidget.setObjectName("centralwidget")
-        self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
-        self.gridLayout.setObjectName("gridLayout")
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton.setEnabled(True)
+        self.pushButton.setGeometry(QtCore.QRect(270, 210, 250, 50))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Fixed, QtWidgets.QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -38,19 +37,19 @@ class Ui_IIntegrationWhale(object):
         self.pushButton.setMouseTracking(False)
         self.pushButton.setTabletTracking(False)
         self.pushButton.setAutoFillBackground(False)
-        self.pushButton.setStyleSheet("background-color: rgb(48, 148, 255);\n"
-                                      "color: rgb(255, 255, 255);\n"
-                                      "font: 25 24pt \"Calibri Light\";\n"
-                                      "gridline-color: rgb(255, 255, 255);\n"
-                                      "selection-color: rgb(255, 255, 255);")
+        self.pushButton.setStyleSheet("background-color: rgb(63, 169, 245);\n"
+"color: rgb(255, 255, 255);\n"
+"font: 25 24pt \"Calibri Light\";\n"
+"gridline-color: rgb(255, 255, 255);\n"
+"selection-color: rgb(255, 255, 255);")
         self.pushButton.setCheckable(False)
         self.pushButton.setAutoDefault(True)
         self.pushButton.setDefault(False)
         self.pushButton.setFlat(False)
         self.pushButton.setObjectName("pushButton")
-        self.gridLayout.addWidget(self.pushButton, 0, 0, 1, 1, QtCore.Qt.AlignmentFlag.AlignHCenter)
         self.progressBar = QtWidgets.QProgressBar(self.centralwidget)
         self.progressBar.setEnabled(True)
+        self.progressBar.setGeometry(QtCore.QRect(200, 310, 400, 21))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Fixed, QtWidgets.QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -62,16 +61,28 @@ class Ui_IIntegrationWhale(object):
         self.progressBar.setInvertedAppearance(False)
         self.progressBar.setTextDirection(QtWidgets.QProgressBar.Direction.BottomToTop)
         self.progressBar.setObjectName("progressBar")
-        self.gridLayout.addWidget(self.progressBar, 1, 0, 1, 1, QtCore.Qt.AlignmentFlag.AlignHCenter)
+        self.label = QtWidgets.QLabel(self.centralwidget)
+        self.label.setGeometry(QtCore.QRect(10, 0, 121, 71))
+        self.label.setText("")
+        self.label.setPixmap(QtGui.QPixmap("../../Downloads/photo_2022-11-12_09-47-40.jpg"))
+        self.label.setScaledContents(True)
+        self.label.setObjectName("label")
         IIntegrationWhale.setCentralWidget(self.centralwidget)
 
-        self.retranslateFirstUi(IIntegrationWhale)
+        self.retranslateUi(IIntegrationWhale)
         QtCore.QMetaObject.connectSlotsByName(IIntegrationWhale)
 
-    def retranslateFirstUi(self, IIntegrationWhale):
+    def retranslateUi(self, IIntegrationWhale):
         _translate = QtCore.QCoreApplication.translate
         IIntegrationWhale.setWindowTitle(_translate("IIntegrationWhale", "MainWindow"))
         self.pushButton.setText(_translate("IIntegrationWhale", "Выберите файл"))
 
 
-
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    IIntegrationWhale = QtWidgets.QMainWindow()
+    ui = Ui_IIntegrationWhale()
+    ui.setupUi(IIntegrationWhale)
+    IIntegrationWhale.show()
+    sys.exit(app.exec())
