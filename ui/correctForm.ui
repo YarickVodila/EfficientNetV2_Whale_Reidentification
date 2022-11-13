@@ -26,7 +26,7 @@
                                     </sizepolicy>
                                 </property>
                                 <property name="text">
-                                    <string>Исправьте теги</string>
+                                    <string>Исправьте айди</string>
                                 </property>
                             </widget>
                         </item>
