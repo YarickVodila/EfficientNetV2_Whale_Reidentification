@@ -11,9 +11,11 @@
 
   ![Приветственное окно](https://i.imgur.com/teau9SH.png)
 
-  ![Главный экран](https://i.imgur.com/6v8qzBO.png)
+  ![Главный экран](https://i.imgur.com/nVvEyqK.png)
 
-  ![Демонстрация работы](https://i.imgur.com/lwSGMKx.png)
+  ![Демонстрация работы](https://i.imgur.com/R2PQlXJ.png)
+  
+  ![Исправление айди](https://i.imgur.com/h18JJyK.png)
 
 </details>
 
