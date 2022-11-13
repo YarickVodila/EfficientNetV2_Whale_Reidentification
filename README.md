@@ -11,9 +11,9 @@
 
   ![Приветственное окно](https://i.imgur.com/teau9SH.png)
 
-  ![Главный экран](https://i.imgur.com/5zvPsSY.png)
+  ![Главный экран](https://i.imgur.com/6v8qzBO.png)
 
-  ![Демонстрация работы](https://i.imgur.com/eia45fu.png)
+  ![Демонстрация работы](https://i.imgur.com/lwSGMKx.png)
 
 </details>
 
