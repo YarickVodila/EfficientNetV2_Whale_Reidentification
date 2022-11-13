@@ -28,9 +28,9 @@ def is_unknown_whale(image):
 
 
 def resized(image, x, y):
-    image = [cv2.resize(image, (x, y))]
-    image = np.array(image).astype('float32') / 255.0
-    return image
+    result = [cv2.resize(image, (x, y))]
+    result = np.array(result).astype('float32') / 255.0
+    return result
 
 
 def get_top(image, top=5):
