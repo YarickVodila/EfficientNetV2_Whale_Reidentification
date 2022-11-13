@@ -1,5 +1,5 @@
 import cv2
-import keras
+from tensorflow import keras
 import numpy as np
 import tensorflow as tf
 
@@ -9,9 +9,9 @@ def SSIMLoss(y_true, y_pred):
 
 
 optimizer = tf.keras.optimizers.Adam(lr=0.0005)
-autoencoder = keras.models.load_model('autoencoder_full_2.h5', compile=False)
+autoencoder = keras.models.load_model('autoencoder.h5', compile=False)
 autoencoder.compile(optimizer=optimizer, loss=SSIMLoss)
-model = keras.models.load_model('EffNetb0v2_ep1.h5')
+model = keras.models.load_model('model.h5')
 
 
 def _is_unknown_whale(pred, image_test):

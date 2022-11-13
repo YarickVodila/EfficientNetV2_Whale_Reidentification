@@ -1,75 +1,72 @@
 import sys
 from functools import partial
+from pathlib import Path
 
 from PyQt6 import uic
 from PyQt6.QtWidgets import QApplication, QMainWindow, QLabel, QFileDialog, QWidget
 
 import ml
-from firstPage import Ui_IIntegrationWhale
-from mainPage import Ui_MainWindow
-from whaleWitget import WhaleCont
+from first_page import Ui_IIntegrationWhale
+from main_page import Ui_MainWindow
+from whale_widget import WhaleCont
 
 
 class MainPageWindow(QMainWindow):
     def __init__(self, images):
         super().__init__()
-        self.mainPageWindow = Ui_MainWindow()
-        self.mainPageWindow.setupUi(self)
-        self.mainPageWindow.BackButton.clicked.connect(self.back)
-        self.mainPageWindow.pushButton.clicked.connect(self.correctButtonInit)
+        self.main_page_window = Ui_MainWindow()
+        self.main_page_window.setupUi(self)
+        self.main_page_window.BackButton.clicked.connect(self.back)
+        self.main_page_window.pushButton.clicked.connect(self.correct_button_init)
         for img, top in images:
-            self.createWhaleWidged(img, top)
+            self.create_whale_widged(img, top)
 
     def back(self):
-        self.firstPageWindow = FirstPage()
-        self.firstPageWindow.show()
+        self.first_page_window = FirstPage()
+        self.first_page_window.show()
         self.hide()
 
-    def createWhaleWidged(self, img, top):
-        whaleWidget = WhaleCont(img, top)
-        whaleWidget.setStyleSheet("background-color: rgb(77, 77, 77); border-radius:0px; border:1px solid black")
-        whaleWidget.label.mousePressEvent = partial(self.changeWhaleMain, whaleWidget)
-        self.mainPageWindow.verticalLayout_2.addWidget(whaleWidget)
+    def create_whale_widged(self, img, top):
+        whale_widget = WhaleCont(img, top)
+        whale_widget.setStyleSheet("background-color: rgb(77, 77, 77); border-radius:0px; border:1px solid black")
+        whale_widget.label.mousePressEvent = partial(self.change_whale_main, whale_widget)
+        self.main_page_window.verticalLayout_2.addWidget(whale_widget)
 
     def deselect(self):
-        items = (self.mainPageWindow.verticalLayout_2.itemAt(i) for i in
-                 range(self.mainPageWindow.verticalLayout_2.count()))
+        items = (self.main_page_window.verticalLayout_2.itemAt(i) for i in
+                 range(self.main_page_window.verticalLayout_2.count()))
         for w in items:
             w.widget().deselect()
 
-    def changeWhaleMain(self, whale, *args, **kwargs):
-        self.clearTags()
-        self.mainPageWindow.label_3.setScaledContents(True)
+    def change_whale_main(self, whale, *args, **kwargs):
+        self.clear_ids()
+        self.main_page_window.label_3.setScaledContents(True)
         self.deselect()
         whale.select()
-        self.addTags(whale.classes)
-        self.mainPageWindow.label_3.setPixmap(whale.pixmap)
+        self.add_ids(whale.classes)
+        self.main_page_window.label_3.setPixmap(whale.pixmap)
 
-    def addTags(self, tags=None):
-        if tags is None:
-            tags = {'1': '1 Место по вироятности кита', '2': "2 Место по вироятности кита",
-                    '3': "3 Место по вироятности кита", '4': "4 Место по вироятности кита",
-                    '5': "5 Место по вироятности кита"}
-        for i in tags:
-            self.label = QLabel(self.mainPageWindow.frame_2)
-            self.label.setText(str(i))
+    def add_ids(self, ids):
+        for i, id in enumerate(ids):
+            self.label = QLabel(self.main_page_window.frame_2)
+            self.label.setText(f"Топ {i+1}: {id}")
             self.label.setStyleSheet('border:None;')
-            self.mainPageWindow.gridLayout_5.addWidget(self.label)
+            self.main_page_window.gridLayout_5.addWidget(self.label)
 
-    def clearTags(self):
-        for i in reversed(range(self.mainPageWindow.gridLayout_5.count())):
-            self.mainPageWindow.gridLayout_5.itemAt(i).widget().deleteLater()
+    def clear_ids(self):
+        for i in reversed(range(self.main_page_window.gridLayout_5.count())):
+            self.main_page_window.gridLayout_5.itemAt(i).widget().deleteLater()
 
-    def correctButtonInit(self):
-        self.correctWindow = CorrectForm()
+    def correct_button_init(self):
+        self.correct_window = CorrectForm()
 
 
 class FirstPage(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.firstPageWindow = Ui_IIntegrationWhale()
-        self.firstPageWindow.setupUi(self)
-        self.firstPageWindow.pushButton.clicked.connect(self.close)
+        self.first_page_window = Ui_IIntegrationWhale()
+        self.first_page_window.setupUi(self)
+        self.first_page_window.pushButton.clicked.connect(self.close)
 
     def close(self):
         fnames = QFileDialog.getOpenFileNames(self, 'Выбрать китов',
@@ -77,25 +74,26 @@ class FirstPage(QMainWindow):
         if len(fnames[0]) == 0:
             return
         images = []
-        self.firstPageWindow.progressBar.setRange(0, len(fnames[0]) + 1)
+        self.first_page_window.progressBar.setRange(0, len(fnames[0]))
         for i, img in enumerate(fnames[0]):
             images.append((img, ml.get_top(img)))
-            self.firstPageWindow.progressBar.setValue(i + 2)
-        self.mainPageWindow = MainPageWindow(images)
-        self.mainPageWindow.show()
+            self.first_page_window.progressBar.setValue(i + 1)
+        main_page_window = MainPageWindow(images)
+        main_page_window.show()
         self.hide()
 
 
 class CorrectForm(QWidget):
     def __init__(self):
-        super(CorrectForm, self).__init__()  # Call the inherited classes __init__ method
-        ui = uic.loadUi('correctForm.ui', self)
+        super(CorrectForm, self).__init__()
+        path = Path(__file__).parent / "ui" / "correctForm.ui"
+        ui = uic.loadUi(path, self)
         self.show()
 
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    with open('./QSS-master/Aqua.qss', 'r') as f:
+    with open(Path(__file__).parent / "ui" / "QSS-master" / "Aqua.qss", 'r') as f:
         style = f.read()
         app.setStyleSheet(style)
     window = FirstPage()
