@@ -27,14 +27,18 @@ def is_unknown_whale(image):
     return result
 
 
+def resized(image, x, y):
+    image = [cv2.resize(image, (x, y))]
+    image = np.array(image).astype('float32') / 255.0
+    return image
+
+
 def get_top(image, top=5):
     image = cv2.imread(image)
-    image = [cv2.resize(image, (224, 224))]
-    image = np.array(image).astype('float32') / 255.0
-    pred = model.predict(image)
+    pred = model.predict(resized(image, 240, 240))
     pred_sorted = [(list(pred[0]).index(x) + 1) for x in sorted(list(pred[0]))[-top:]]
     top = list(reversed(pred_sorted))
-    anti = is_unknown_whale(image)[0]
-    if anti:
+    is_unknown = is_unknown_whale(resized(image, 224, 224))[0]
+    if is_unknown:
         top[0] = 0
     return top
