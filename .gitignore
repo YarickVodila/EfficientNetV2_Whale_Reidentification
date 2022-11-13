@@ -179,3 +179,5 @@ cython_debug/
 *.jpg
 *.png
 /mainPageTest.py
+/model.h5
+/autoencoder.h5
