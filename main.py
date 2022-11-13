@@ -1,4 +1,6 @@
+import csv
 import sys
+from datetime import datetime
 from functools import partial
 from pathlib import Path
 
@@ -49,7 +51,7 @@ class MainPageWindow(QMainWindow):
     def add_ids(self, ids):
         for i, id in enumerate(ids):
             self.label = QLabel(self.main_page_window.frame_2)
-            self.label.setText(f"Топ {i+1}: {id}")
+            self.label.setText(f"Топ {i + 1}: {id}")
             self.label.setStyleSheet('border:None;')
             self.main_page_window.gridLayout_5.addWidget(self.label)
 
@@ -75,9 +77,14 @@ class FirstPage(QMainWindow):
             return
         images = []
         self.first_page_window.progressBar.setRange(0, len(fnames[0]))
-        for i, img in enumerate(fnames[0]):
-            images.append((img, ml.get_top(img)))
-            self.first_page_window.progressBar.setValue(i + 1)
+        current_datetime = datetime.now().strftime("%H-%M-%S_%d-%m-%Y")
+        with open(Path(__file__).parent / f"result_{current_datetime}.csv", "w", newline="") as csvfile:
+            writer = csv.writer(csvfile, delimiter=",", quotechar="|", quoting=csv.QUOTE_MINIMAL)
+            for i, img in enumerate(fnames[0]):
+                top = ml.get_top(img)
+                images.append((img, top))
+                writer.writerow([img] + top)
+                self.first_page_window.progressBar.setValue(i + 1)
         main_page_window = MainPageWindow(images)
         main_page_window.show()
         self.hide()
